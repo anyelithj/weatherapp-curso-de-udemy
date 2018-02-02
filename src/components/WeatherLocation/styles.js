@@ -23,6 +23,7 @@ export default StyleSheet.create({
     'padding': [{ 'unit': 'px', 'value': 25 }, { 'unit': 'px', 'value': 25 }, { 'unit': 'px', 'value': 25 }, { 'unit': 'px', 'value': 25 }],
     'boxSizing': 'border-box',
     'fontFamily': ''Roboto', sans-serif',
-    'boxShadow': [{ 'unit': 'px', 'value': 10 }, { 'unit': 'px', 'value': 10 }, { 'unit': 'px', 'value': 42 }, { 'unit': 'px', 'value': -12 }, { 'unit': 'string', 'value': 'rgba(0, 0, 0, 0.75)' }]
+    'boxShadow': [{ 'unit': 'px', 'value': 10 }, { 'unit': 'px', 'value': 10 }, { 'unit': 'px', 'value': 42 }, { 'unit': 'px', 'value': -12 }, { 'unit': 'string', 'value': 'rgba(0, 0, 0, 0.75)' }],
+    'cursor': 'pointer'
   }
 });

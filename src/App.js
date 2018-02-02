@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React, { Component } from "react";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import { Grid, Row, Col } from "react-flexbox-grid";
 import Paper from "material-ui/Paper";
 import AppBar from "material-ui/AppBar";
-import LocationList from './components/LocationList';
-import ForecastExtended from './components/ForecastExtended';
-import './App.css';
+import LocationList from "./components/LocationList";
+import ForecastExtended from "./components/ForecastExtended";
+import "./App.css";
 
 const cities = [
   "Buenos Aires,ar",
@@ -19,18 +19,17 @@ const cities = [
 class App extends Component {
   constructor() {
     super();
-    this.state = { city: null};
+    this.state = { city: null };
   }
-  
-  handleSelectedLocation = city => {  
-    
+
+  handleSelectedLocation = city => {
     this.setState({ city });
     console.log(`handleSelectedLocation ${city}`);
-  }
+  };
   render() {
     const { city } = this.state;
-    return <MuiThemeProvider>
-      
+    return (
+      <MuiThemeProvider>
         <Grid>
           <Row>
             <Col xs={12}>
@@ -39,24 +38,26 @@ class App extends Component {
           </Row>
           <Row>
             <Col xs={12} md={6}>
-              <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation} />
+              <LocationList
+                cities={cities}
+                onSelectedLocation={this.handleSelectedLocation}
+              />
             </Col>
             <Col xs={12} md={6}>
               <Paper zDepth={4}>
                 <div className="detail">
-                
-                  {
-                    city === null ?
-                    <h2>No se seleccionó ciudad</h2> : 
-                    <ForecastExtended city={city} /> 
-                    }
+                  {city === null ? (
+                    <h2>No se seleccionó ciudad</h2>
+                  ) : (
+                    <ForecastExtended city={city} />
+                  )}
                 </div>
               </Paper>
             </Col>
           </Row>
         </Grid>
-   
-      </MuiThemeProvider>;
+      </MuiThemeProvider>
+    );
   }
 }
 
